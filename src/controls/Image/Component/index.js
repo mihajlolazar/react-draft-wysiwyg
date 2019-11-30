@@ -180,6 +180,9 @@ class LayoutComponent extends Component {
       doCollapse,
       translations,
     } = this.props;
+
+    console.log('test');
+
     return (
       <div
         className={classNames('rdw-image-modal', popupClassName)}
