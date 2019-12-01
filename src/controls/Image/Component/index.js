@@ -232,17 +232,14 @@ class LayoutComponent extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  {console.log('previewImage: ',previewImage)}
-                  {console.log('imgSrc :',imgSrc)}
-                  {console.log('isImage ',isImage(imgSrc))}
-                  { previewImage && imgSrc && isImage(imgSrc) && <img
+                  { previewImage && isImage(imgSrc) && <img
                       src={imgSrc}
                       alt={imgSrc}
                       className="rdw-image-modal-upload-option-image-preview"
                     />
                   }
 
-                  { !isImage(imgSrc) && imgSrc && <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span>}
+                  { imgSrc && !previewImage && <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span> }
                 </label>
               </div>
               <input
