@@ -239,7 +239,7 @@ class LayoutComponent extends Component {
                     />
                   }
 
-                  { imgSrc && !previewImage && <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span> }
+                  { imgSrc && (!previewImage || !isImage(imgSrc)) && <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span> }
                 </label>
               </div>
               <input
