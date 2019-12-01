@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import Option from '../../../components/Option';
 import Spinner from '../../../components/Spinner';
 import './styles.css';
+import {getFileExtension, isImage} from "../../../utils/common";
 
 class LayoutComponent extends Component {
   static propTypes: Object = {
@@ -232,15 +233,13 @@ class LayoutComponent extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  {}
-
-                  { previewImage && imgSrc
-                    ? <img
+                  { previewImage && imgSrc && (
+                    isImage(imgSrc) ? <img
                       src={imgSrc}
                       alt={imgSrc}
                       className="rdw-image-modal-upload-option-image-preview"
-                    />
-                    : imgSrc || translations['components.controls.image.dropFileText']}
+                    /> : <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span>
+                  )}
                 </label>
               </div>
               <input

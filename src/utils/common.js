@@ -59,8 +59,12 @@ export function stopPropagation(event) {
   event.stopPropagation();
 }
 
+export const getFileExtension = (fileName: string) => {
+  return fileName.split('.').pop().toLowerCase();
+};
+
 export const isImage = (imageName: string) => {
-  const extension = imageName.split('.').pop().toLowerCase();
+  const extension = getFileExtension(imageName);
 
   return ['jpg','jpeg','png','svg','gif'].indexOf(extension) > -1;
 };
