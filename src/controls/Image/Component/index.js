@@ -233,13 +233,15 @@ class LayoutComponent extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  { previewImage && imgSrc && (
-                    isImage(imgSrc) ? <img
+                  {console.log(previewImage)}
+                  {console.log(imgSrc)}
+                  {console.log(isImage(imgSrc))}
+                  { previewImage && imgSrc && isImage(imgSrc) ? <img
                       src={imgSrc}
                       alt={imgSrc}
                       className="rdw-image-modal-upload-option-image-preview"
                     /> : <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span>
-                  )}
+                  }
                 </label>
               </div>
               <input
