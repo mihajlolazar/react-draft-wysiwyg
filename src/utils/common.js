@@ -58,3 +58,9 @@ export function filter(obj, keys) {
 export function stopPropagation(event) {
   event.stopPropagation();
 }
+
+export const isImage = (imageName: string) => {
+  const extension = imageName.split('.').pop().toLowerCase();
+
+  return ['jpg','jpeg','png','svg','gif'].indexOf(extension) > -1;
+};
