@@ -65,6 +65,7 @@ export const getFileExtension = (fileName: string) => {
 
 export const isImage = (imageName: string) => {
   const extension = getFileExtension(imageName);
-
+console.log('isImage imageName', imageName);
+console.log('isImage extension', extension);
   return ['jpg','jpeg','png','svg','gif'].indexOf(extension) > -1;
 };

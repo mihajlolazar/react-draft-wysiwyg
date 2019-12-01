@@ -187,7 +187,6 @@ class LayoutComponent extends Component {
         className={classNames('rdw-image-modal', popupClassName)}
         onClick={this.stopPropagation}
       >
-        {console.log(imgSrc)}
         <div className="rdw-image-modal-header">
           {uploadEnabled && uploadCallback &&
             <span
@@ -233,15 +232,17 @@ class LayoutComponent extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  {console.log(previewImage)}
-                  {console.log(imgSrc)}
-                  {console.log(isImage(imgSrc))}
-                  { previewImage && imgSrc && isImage(imgSrc) ? <img
+                  {console.log('previewImage: ',previewImage)}
+                  {console.log('imgSrc :',imgSrc)}
+                  {console.log('isImage ',isImage(imgSrc))}
+                  { previewImage && imgSrc && isImage(imgSrc) && <img
                       src={imgSrc}
                       alt={imgSrc}
                       className="rdw-image-modal-upload-option-image-preview"
-                    /> : <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span>
+                    />
                   }
+
+                  { !isImage(imgSrc) && imgSrc && <span className={`rdw-image-modal-upload-option-file-preview is-${getFileExtension(imgSrc)}`}>{imgSrc}</span>}
                 </label>
               </div>
               <input
