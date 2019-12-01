@@ -232,7 +232,7 @@ class LayoutComponent extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  { !imgSrc && translations['components.controls.image.dropFileText']}}
+                  { !imgSrc && translations['components.controls.image.dropFileText']}
 
                   { previewImage && isImage(imgSrc) && <img
                       src={imgSrc}
