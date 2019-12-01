@@ -262,7 +262,7 @@ class LayoutComponent extends Component {
               <span className="rdw-image-mandatory-sign">*</span>
             </div>
         }
-        {altConf.present &&
+        {altConf.present && isImage(imgSrc) &&
         <div className="rdw-image-modal-size">
           <span className="rdw-image-modal-alt-lbl">Alt Text</span>
           <input
@@ -275,28 +275,32 @@ class LayoutComponent extends Component {
           />
           <span className="rdw-image-mandatory-sign">{altConf.mandatory && '*'}</span>
         </div>}
-        <div className="rdw-image-modal-size">
-          &#8597;&nbsp;
-          <input
-            onChange={this.updateValue}
-            onBlur={this.updateValue}
-            value={height}
-            name="height"
-            className="rdw-image-modal-size-input"
-            placeholder="Height"
-          />
-          <span className="rdw-image-mandatory-sign">*</span>
-          &nbsp;&#8596;&nbsp;
-          <input
-            onChange={this.updateValue}
-            onBlur={this.updateValue}
-            value={width}
-            name="width"
-            className="rdw-image-modal-size-input"
-            placeholder="Width"
-          />
-          <span className="rdw-image-mandatory-sign">*</span>
-        </div>
+
+        {isImage(imgSrc) &&
+          <div className="rdw-image-modal-size">
+            &#8597;&nbsp;
+            <input
+              onChange={this.updateValue}
+              onBlur={this.updateValue}
+              value={height}
+              name="height"
+              className="rdw-image-modal-size-input"
+              placeholder="Height"
+            />
+            <span className="rdw-image-mandatory-sign">*</span>
+            &nbsp;&#8596;&nbsp;
+            <input
+              onChange={this.updateValue}
+              onBlur={this.updateValue}
+              value={width}
+              name="width"
+              className="rdw-image-modal-size-input"
+              placeholder="Width"
+            />
+            <span className="rdw-image-mandatory-sign">*</span>
+          </div>
+        }
+
         <span className="rdw-image-modal-btn-section">
           <button
             className="rdw-image-modal-btn"
