@@ -51,8 +51,6 @@ function getLinkComponent(config) {
       const { url, targetOption } = contentState.getEntity(entityKey).getData();
       const { showPopOver } = this.state;
 
-      console.log(contentState.getEntity(entityKey).getData());
-
       return (
         <span
           className="rdw-link-decorator-wrapper"
